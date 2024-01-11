@@ -58,21 +58,24 @@ There are 4 main components to the design:
 
 2.	Laser Projector: The optics for the laser projector are aligned with the exit aperture
 
-3.	LED Projector: 2 Types:
+3.	LED Projector: 2 Types of optics:
 
 -	Collimating Optics: there are six LED subassemblies, each at a different wavelength. We need to pick off light from each of them using a linear stage. This section also includes the collimating optics.
 
 - Converging Optics: This consists of the pick off mirror for the LEDs, a converging lens, a field lens, and then another mirror to send the light up to the exit aperture
 
 4.	Pick Off Mirror: when this mirror is in place, the LED will be projected. When moved, the laser will be projected.
+
 The projectors electronics include:
 
-- Light Source Vertical Stage: Selects between the LED and Laser Projector
-- Laser Goniometer: Gimbal for laser output. Adjusts the tip/tilt of the fiber. Two-axis control via Universal Controller, X-MCC4. 
-- Laser Focus Stage: Sets collimation distance as a function of wavelength. Moves collimated lenses relative to the output of the fiber. 
-- LED Linear Stage: Enables picking off light from different LED Projectors 
-- Optical Components Stages: 
+- Light Source Vertical Stage: `LRQ150P <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Selects between the LED and Laser Projector
+- Laser Goniometer: `OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Gimbal for laser output. Adjusts the tip/tilt of the fiber. Two-axis control via Universal Controller, X-MCC4. 
+- Laser Focus Stage: LSM050A-PTB2, Sets collimation distance as a function of wavelength. Moves collimated lenses relative to the output of the fiber. 
+- LED Linear Stage: LRQ300L`OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Enables picking off light from different LED Projectors 
+- Optical Components Stages: https://www.zaber.com/products/optical-mounts/OMG/specs LSA25-T4-MT10T3`OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__  
 - LEDs: Uses multiple LEDs of varying wavelengths to create a “white light” projector. A dichroic will be used to combine the light from LEDs.
+
+  More information on the Multi-LED Projector found `here <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Mulit-LED+Projector>`__. 
 
 .. figure:: /_static/Projector Electronics.png
  :name: Projector Electronics
@@ -136,7 +139,7 @@ Power distribution unit is the `Raritan PX3-5288R <https://www.raritan.com/produ
 
 LED Drivers
 -----------
-The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__T-Cube LED Drivers. These are used to power the LEDs in the projector. The LED Drivers will typically be operating at max power to operate the LEDs in the projector. 
+The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__ T-Cube LED Drivers. These are used to power the LEDs in the projector. The LED Drivers will typically be operating at max power to operate the LEDs in the projector. 
 
 There are ten LED Drivers, each connected to a solid-state relay (SSR) for the 10 LEDs in the projector. Each SSR is connected to the LabJack, which sends a signal to each SSR to turn on the LED Driver and the corresponding LED. 
 
