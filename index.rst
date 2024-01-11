@@ -6,9 +6,6 @@
 
 .. TODO: Delete the note below before merging new content to the main branch.
 
-.. note::
-
-   **This technote is a work-in-progress.**
 
 Abstract
 ========
@@ -68,11 +65,11 @@ There are 4 main components to the design:
 
 The projectors electronics include:
 
-- Light Source Vertical Stage: `LRQ150P <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Selects between the LED and Laser Projector
-- Laser Goniometer: `OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Gimbal for laser output. Adjusts the tip/tilt of the fiber. Two-axis control via Universal Controller, X-MCC4. 
-- Laser Focus Stage: LSM050A-PTB2, Sets collimation distance as a function of wavelength. Moves collimated lenses relative to the output of the fiber. 
-- LED Linear Stage: LRQ300L`OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__, Enables picking off light from different LED Projectors 
-- Optical Components Stages: https://www.zaber.com/products/optical-mounts/OMG/specs LSA25-T4-MT10T3`OMG-T4A <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__  
+- Light Source Vertical Stage: `LRQ150P <https://www.zaber.com/products/linear-stages/X-LRQ-DE/specs?part=X-LRQ150AP-DE51>`__, Selects between the LED and Laser Projector
+- Laser Goniometer: `OMG-T4A <https://www.zaber.com/products/optical-mounts/OMG/specs?part=OMG-T4A>`__, Gimbal for laser output. Adjusts the tip/tilt of the fiber. Two-axis control via Universal Controller, X-MCC4. 
+- Laser Focus Stage: `LSM050A-PTB2 <https://www.zaber.com/products/linear-stages/X-LSM/specs?part=X-LSM050A>`__, Sets collimation distance as a function of wavelength. Moves collimated lenses relative to the output of the fiber. 
+- LED Linear Stage: `LRQ300AL <https://www.zaber.com/products/linear-stages/X-LRQ-DE/specs?part=X-LRQ300AL-DE51>`__, Enables picking off light from different LED Projectors 
+- Optical Components Stages: `LSA25-T4-MT10T3 <https://www.zaber.com/products/optical-mounts/OMG/specs>`__  
 - LEDs: Uses multiple LEDs of varying wavelengths to create a “white light” projector. A dichroic will be used to combine the light from LEDs.
 
   More information on the Multi-LED Projector found `here <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Mulit-LED+Projector>`__. 
@@ -135,7 +132,7 @@ This embedded SBC is an `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-
 
 Power Distribution Unit (PDU)
 -----------------------------
-Power distribution unit is the `Raritan PX3-5288R <https://www.raritan.com/product-selector/pdu-detail/px3-5288r>`__. Port 2 is used for the Electrometer. Ports 3 and 4 are used for Fiber Spectrographs. Port 5 is for powering the Moxa, LED Drivers and LabJack. Port 6 is for powering the projector controller and stages. Only the Network Switch and the Embedded SBC are NOT powered through this device. 
+Power distribution unit is the `Raritan PX3-5288R <https://cdn.raritan.com/product-selector/pdus/PX3-5288R/PX3-5288R-spec.pdf>`__. Port 2 is used for the Electrometer. Ports 3 and 4 are used for Fiber Spectrographs. Port 5 is for powering the Moxa, LED Drivers and LabJack. Port 6 is for powering the projector controller and stages. Only the Network Switch and the Embedded SBC are NOT powered through this device. 
 
 LED Drivers
 -----------
