@@ -41,9 +41,9 @@ The maximum power, when all the components are operating at full capacity simult
 Design
 ======
 
-.. figure:: /_static/Projector Block Diagram V2.png
+.. figure:: /_static/ProjectorBlockDiagramV2.png
  :name: Projector Block Diagram V2
- :target: ../_images/Projector Block Diagram V2.png
+ :target: ../_images/ProjectorBlockDiagramV2.png
  :alt: Projector Block Diagram V2
  :scale: 50 %
 
@@ -74,9 +74,9 @@ The projectors electronics include:
 
   More information on the Multi-LED Projector found `here <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Mulit-LED+Projector>`__. 
 
-.. figure:: /_static/Projector Electronics.png
+.. figure:: /_static/ProjectorElectronics.png
  :name: Projector Electronics
- :target: ../_images/Projector Electronics.png
+ :target: ../_images/ProjectorElectronics.png
  :alt: Projector Electronics
  :scale: 50 %
 
@@ -88,9 +88,9 @@ The electronics cabinet must be powered down via a disconnect switch on the door
 
 The Electronics Cabinet includes a PDU, an Electrometer, two Fiber Spectrographs, a Network Switch, an Ethernet to Serial Server, an Embedded SBC, a LabJack, a 4-axis Drive Controller for the Projector stages, ten Solid State Relays, and ten LED Drivers. There are 5V, 12V, 15V, 24V, and 48V AC to DC power supplies that are all powered through the PDU.
 
-.. figure:: /_static/Projector Panel 5.png
+.. figure:: /_static/ProjectorPanel5.jpg
  :name: Projector Panel 5
- :target: ../_images/Projector Panel 5.png
+ :target: ../_images/ProjectorPanel5.jpg
  :alt: Projector Panel 5
  :scale: 50 %
 
