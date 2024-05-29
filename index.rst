@@ -160,16 +160,16 @@ Operation
    +--------+----------------------------+
    | Outlet | Name                       |
    +--------+----------------------------+
-   | 2      | Electrometer               |
+   | 9      | Electrometer               |
    +--------+----------------------------+
-   | 3      | Red Spectrograph           |
+   | 10     | Moxa/LabJack/LED Drivers/  |
+   |        | Projector Controller/Stages|
    +--------+----------------------------+ 
-   | 4      | Blue Spectrograph          |
+   | 11     | Blue Spectrograph          |
    +--------+----------------------------+   
-   | 5      | Moxa/LabJack/LED Drivers   |
+   | 12     | Red Spectrograph           |
    +--------+----------------------------+    
-   | 6      | Projector Controller/Stages|
-   +--------+----------------------------+      
+     
    
 .. table:: IP Addresses
 
