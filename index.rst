@@ -41,9 +41,9 @@ The maximum power, when all the components are operating at full capacity simult
 Design
 ======
 
-.. figure:: /_static/ProjectorBlockDiagram.png
+.. figure:: /_static/ProjectorBlockDiagram.PNG
  :name: Projector Block Diagram
- :target: ../_images/ProjectorBlockDiagram.png
+ :target: ../_images/ProjectorBlockDiagram.PNG
  :alt: Projector Block Diagram
  :scale: 50 %
 
