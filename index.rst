@@ -19,6 +19,12 @@ In the center of the calibration screen, a box will be installed that will inclu
 
 The projector will need to switch between the LED system and the Laser-fed system. The fiber for the laser will come from the laser enclosure located elsewhere in the dome. Two LEDs will be used for most bands, where a dichroic will be used to combine the light from both LEDs. 
 
+.. figure:: /_static/Projector_Mounting.PNG
+ :name: Projector Mounting
+ :target: ../_images/Projector_Mounting.PNG
+ :alt: Projector Mounting
+ :scale: 50 %
+
 Requirements
 ============
 
