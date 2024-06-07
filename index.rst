@@ -142,9 +142,11 @@ Power distribution unit is the `Raritan PX3-5288R <https://cdn.raritan.com/produ
 
 LED Drivers
 -----------
-The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__ T-Cube LED Drivers. These are used to power the LEDs in the projector. The LED Drivers will typically be operating at max power to operate the LEDs in the projector. 
+The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__ T-Cube LED Drivers. These are used to drive power to the LEDs in the projector. The LED Drivers typically will function at max power to operate the LEDs in the projector. 
 
-There are ten LED Drivers, each connected to a solid-state relay (SSR) for the 10 LEDs in the projector. Each SSR is connected to the LabJack, which sends a signal to each SSR to turn on the LED Driver and the corresponding LED. 
+There are ten LED Drivers, each connected to a solid-state relay (SSR). Each SSR is connected to the LabJack, which is programmed to send a signal to the SSR that corresponds with the LED Driver(s)/LED(s) that are to be turned on. 
+
+Each LED Driver will be funcitoning in modualtion mode, which allows for the LEDs that are selected to be adjusted in brightness. The LabJack is used to send a signal, via a BNC cable, to no more than two LED Drivers at a time (at most two LEDs will be on at a time in the projector). 
 
 Arc Lamp
 --------
