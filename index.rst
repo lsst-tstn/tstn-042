@@ -94,10 +94,10 @@ The electronics cabinet must be powered down via a disconnect switch on the door
 
 The Electronics Cabinet includes a PDU, an Electrometer, two Fiber Spectrographs, a Network Switch, an Ethernet to Serial Server, an Embedded SBC, a LabJack, a 4-axis Drive Controller for the Projector stages, ten Solid State Relays, and ten LED Drivers. There are 5V, 12V, 15V, 24V, and 48V AC to DC power supplies that are all powered through the PDU.
 
-.. figure:: /_static/ProjectorPanel5.jpg
- :name: Projector Panel 5
- :target: ../_images/ProjectorPanel5.jpg
- :alt: Projector Panel 5
+.. figure:: /_static/Projector Panel 7.jpg
+ :name: Projector Panel 7
+ :target: ../_images/Projector Panel 7.jpg
+ :alt: Projector Panel 7
  :scale: 50 %
 
 Component Description
@@ -134,7 +134,7 @@ Ethernet-to-Serial Server
 
 Embedded SBC
 ------------
-This embedded SBC is an `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__. It is to be connected to the Ethernet via the Network switch. This device received Ethernet from the Collimated Beam Projector cabinet. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
+The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.They are to be connected to the Ethernet via the Network switch. These devices received Ethernet from the Collimated Beam Projector cabinet. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
 
 Power Distribution Unit (PDU)
 -----------------------------
@@ -165,18 +165,18 @@ Operation
 
 .. table:: The PDU outlet numbering
 
-   +--------+----------------------------+
-   | Outlet | Name                       |
-   +--------+----------------------------+
-   | 9      | Electrometer               |
-   +--------+----------------------------+
-   | 10     | Moxa/LabJack/LED Drivers/  |
-   |        | Projector Controller/Stages|
-   +--------+----------------------------+ 
-   | 11     | Blue Spectrograph          |
-   +--------+----------------------------+   
-   | 12     | Red Spectrograph           |
-   +--------+----------------------------+    
+   +--------+------------------------------+
+   | Outlet | Name                         |
+   +--------+------------------------------+
+   | 9      | Electrometer                 |
+   +--------+------------------------------+
+   | 10     | Moxa/LabJack/LED Drivers/    |
+   |        | Projector Controller & Stages|
+   +--------+------------------------------+ 
+   | 11     | Blue Spectrograph            |
+   +--------+------------------------------+   
+   | 12     | Red Spectrograph             |
+   +--------+------------------------------+    
      
    
 .. table:: IP Addresses
