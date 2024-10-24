@@ -202,13 +202,14 @@ Operation
 Additional Documentation
 ========================
 
-Initial documentation for the Central Projector system was done in `Confluence <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Central+Projection+System+Electronics>`__, and further details on the design and specifications can be found `here <https://confluence.lsstcorp.org/display/LTS/Central+Projection+System+Hardware>`__. 
+Initial documentation for the Central Projector system was done in `Confluence <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Central+Projection+System+Electronics>`__, and further details on the design and specifications can be found `here <https://rubinobs.atlassian.net/wiki/spaces/LTS/pages/50084494/Central+Projection+System+Electronics>`__. 
 
 Docushare: https://docushare.lsst.org/docushare/dsweb/View/Collection-10012 
 
 Docushare for Projector Enclosure: https://docushare.lsst.org/docushare/dsweb/View/Collection-15446
 
 Docushare for Electronics Cabinet: https://docushare.lsst.org/docushare/dsweb/View/Collection-15975
+
 
 See the `reStructuredText Style Guide <https://developer.lsst.io/restructuredtext/style.html>`__ to learn how to create sections, links, images, tables, equations, and more.
 
