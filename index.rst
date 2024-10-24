@@ -206,9 +206,9 @@ Initial documentation for the Central Projector system was done in `Confluence <
 
 Docushare: https://docushare.lsst.org/docushare/dsweb/View/Collection-10012 
 
-Docushre for Projector Enclosure: https://docushare.lsst.org/docushare/dsweb/View/Collection-15446
+Docushare for Projector Enclosure: https://docushare.lsst.org/docushare/dsweb/View/Collection-15446
 
-Docushre for Electronics Cabinet: https://docushare.lsst.org/docushare/dsweb/View/Collection-15975
+Docushare for Electronics Cabinet: https://docushare.lsst.org/docushare/dsweb/View/Collection-15975
 
 See the `reStructuredText Style Guide <https://developer.lsst.io/restructuredtext/style.html>`__ to learn how to create sections, links, images, tables, equations, and more.
 
