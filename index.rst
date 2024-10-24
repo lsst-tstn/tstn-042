@@ -122,7 +122,7 @@ Information on the electrometer and photodiode can be found on Docushare `here <
 
 Ethernet Network Switch
 -----------------------
-Cisco Catalyst `IE-3100-4T2S-E <https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html>`__. 4-Port Ethernet, one port for input Ethernet and 3 ports for output Ethernet. The Network Switch is powered at all times except when the disconnect switch on the door of the electronics cabinet is ‘OFF’ or power is otherwise lost to the electronics cabinet. Supplies Ethernet ports for the Ethernet-to-Serial server, PDU, and LabJack. 
+Cisco Catalyst `IE-3100-8T2S-E <https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html>`__. 8-Port Ethernet. The Network Switch is powered at all times except when the disconnect switch on the door of the electronics cabinet is ‘OFF’ or power is otherwise lost to the electronics cabinet. Supplies Ethernet ports for the Ethernet-to-Serial server, PDU, SBCs and LabJack. 
 
 .. note::
 
@@ -134,7 +134,7 @@ Ethernet-to-Serial Server
 
 Embedded SBC
 ------------
-The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.They are to be connected to the Ethernet via the Network switch. These devices received Ethernet from the Collimated Beam Projector cabinet. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
+The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.They are to be connected to the Ethernet via the Network switch. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
 
 Power Distribution Unit (PDU)
 -----------------------------
