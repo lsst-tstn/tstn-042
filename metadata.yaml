@@ -17,6 +17,7 @@ doc_title: "Calibration FlatField Projector Electronics Cabinet"
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
+  - "Antanasia Jones"
   - "Parker Fagrelius"
 
 # Current document revision date, YYYY-MM-DD
@@ -37,7 +38,7 @@ authors:
 copyright: "2023, Association of Universities for Research in Astronomy, Inc. (AURA)"
 
 # Description. A short, 1-2 sentence statemement used by document indices.
-description: "Description of the electronics cabinet that will be mounted on the dome to power and communicate with the flatfield projector."
+description: "Description of the electronics cabinet that is mounted on the dome to power and communicate with the flatfield projector."
 
 # Abstract, if available
 # abstract: >
