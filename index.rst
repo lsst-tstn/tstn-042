@@ -1,12 +1,8 @@
-:tocdepth: 1
-
-.. sectnum::
-
-.. Metadata such as the title, authors, and description are set in metadata.yaml
-
+Flatfield Projector Electronics Cabinet
+=======================================
 
 Abstract
-========
+--------
 
 Description of the electronics cabinet that will be mounted on the dome to power and communicate with the flatfield projector. 
 The Flat Field Central Projector is a part of the calibration system for the Rubin Telescope. 
@@ -15,80 +11,60 @@ All supporting documentation is included.
 The electronics system was partially designed by Parker Fagrelius and the design was completed and built by Antanasia Jones in December 2023. 
 
 Overview
-========
+--------
 
-In the center of the calibration screen, a box was installed that includes the optics to project both white light (LEDs) and the laser to the `Calibration Reflector <https://tstn-049.lsst.io/>`__ and then the `Calibration Screen <https://tstn-057.lsst.io/>`__. 
+In the center of the calibration screen, the `Flatfield Projector <https://tstn-060.lsst.io>`__ was installed that includes the optics to project both white light (LEDs) and the laser to the `Calibration Reflector <https://tstn-049.lsst.io/>`__ and then the `Calibration Screen <https://tstn-057.lsst.io/>`__. 
 Since the Central Projector is placed in the center of the calibration screen, there is a very stringent volume restriction on the projector box with a maximum volume of 500mmX500mmX800mm. 
-Since many electronics are needed to power and operate the projector, a separate electronics cabinet for the projector is being utilized and will be placed underneath the projector box on the back of the calibration screen. 
-
-The projector will need to switch between the LED system and the Laser-fed system. 
-The fiber for the laser will come from the laser enclosure located elsewhere in the dome. 
+Since many electronics are needed to power and operate the projector, a separate electronics cabinet for the projector is being utilized and is installed underneath the projector box on the back of the calibration screen. 
 
 Initially, the electronics cabinet was going to sit directly below the projector to reduce all cable lengths. 
 Due to access issues, this was not possible. The electronics cabinet is mounted about 3 meters below the projector.
 
 .. figure:: /_static/Projector_Mounting.PNG
- :name: Projector Mounting
- :target: ../_images/Projector_Mounting.PNG
- :scale: 50 %
+   :name: Projector Mounting
+   :target: ../_images/Projector_Mounting.PNG
+   :width: 75%
+
+   Initial location of the electronics cabinet
 
 .. figure:: /_static/screen_back1.jpg
- :name: Back of Screen 1
- :target: ../_images/screen_back1.jpg
- :scale: 50 %
-
-The view of the projector and the electronics cabinet from behind the calibration screen
+   :name: Back of Screen 1
+   :target: ../_images/screen_back1.jpg
+   :width: 75%
+    
+   The view of the projector and the electronics cabinet from behind the calibration screen
 
 .. figure:: /_static/screen_back2.jpg
- :name: Back of Screen 2
- :target: ../_images/screen_back2.jpg
- :scale: 50 %
+   :name: Back of Screen 2
+   :target: ../_images/screen_back2.jpg
+   :width: 75%
 
-
-Requirements
-============
-
-Operational Requirements
-------------------------
--	Able to deliver light from the Laser or LED at a variety of wavelengths
--	System needed for monitoring output light: luminance and spectral
--	The projector will need to be aligned to the calibration screen laterally and radially and in the tip and tilt to specific degrees. 
-
-Power Requirements
-------------------
-The Electronics cabinet will be supplied with 220V, 50 Hz, 16 Amps, single phase, AC power. 
-The Collimated Beam Projector (CBP) Electronics Cabinet will provide power and Ethernet to the Central Projector System due to a limited amount of power outlets available through the contractor. 
-This set up does not affect the operation of the Central Projector since the Central Projector and the Collimated Beam Projector will not be operating at the same time. 
-
-.. note::
-
-  Since the Central Projector and electronics will receive power from the CBP electronics cabinet, when the CBP electronics cabinet is down or under maintenance the power to the Central Projector will also be off. 
-
-The maximum power, when all the components are operating at full capacity simultaneously, for the entire central projection system was calculated as approximately 730W. 
-The standby power, when the system not in use, but still powered, was calculated as approximately 180W.
+   View of the electronics cabinet from below the calibration screen. Above it you can see a gray frame platform and the black projector box.
 
 Design
-======
+------
 
 .. figure:: /_static/ProjectorBlockDiagram.PNG
- :name: Projector Block Diagram
- :target: ../_images/ProjectorBlockDiagram.PNG
- :alt: Projector Block Diagram
- :scale: 50 %
+   :name: Projector Block Diagram
+   :target: ../_images/ProjectorBlockDiagram.PNG
+   :alt: Projector Block Diagram
+
+   Block Diagram of the Projector electronics cabinet.
 
 Projector Enclosure
--------------------
-The flatfield projector is described in detail in [TSTN-060](https://tstn-060.lsst.io). 
+^^^^^^^^^^^^^^^^^^^
+The `Flatfield Projector <https://tstn-060.lsst.io>`__ contains the optics for both the LED and laser projectors, as well as the LED assemblies, and some monitoring hardware.
 It uses linear stages to select between the LED and Laser projectors.
 
 .. figure:: /_static/top_projector.png
- :name: Top view of Projector
- :target: ../_images/top_projector.png
- :alt: Top Projector
+   :name: Top view of Projector
+   :target: ../_images/top_projector.png
+   :alt: Top Projector
 
-The projector box looking down from the top. For more informaiton, see TSTN-060.
+   The projector box looking down from the top. For more informaiton, see TSTN-060.
 
-The projectors electronics include:
+
+The electronics that sit within the projector are:
 
 - Light Source Vertical Stage: `LRQ150P <https://www.zaber.com/products/linear-stages/X-LRQ-DE/specs?part=X-LRQ150AP-DE51>`__, Selects between the LED and Laser Projector
 - Laser Goniometer: `OMG-T4A <https://www.zaber.com/products/optical-mounts/OMG/specs?part=OMG-T4A>`__, Gimbal for laser output. Adjusts the tip/tilt of the fiber. Two-axis control via Universal Controller, X-MCC4. 
@@ -97,12 +73,13 @@ The projectors electronics include:
 - LED Focus Stage: `LSA25-T4-MT10T3 <https://www.zaber.com/products/optical-mounts/OMG/specs>`__  
 - LEDs: Uses multiple LEDs of varying wavelengths to create a “white light” projector. A dichroic will be used to combine the light from LEDs.
 
-More information on the Multi-LED Projector found `here <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Mulit-LED+Projector>`__. 
-
+The projector is connected to the projector electronics cabinet via a cable bundle that is routed up the calibration screen structure. 
+This bundle runs ~6m and contains the control cables for all 10 LEDs, 3 cables for the linear stages, a cable for the photodiode and the two fiber optics for the spectrographs.
 
 Electronics Cabinet
--------------------
+^^^^^^^^^^^^^^^^^^^
 The Electronics cabinet was designed to run on 220VAC, 50Hz, 1 Phase, 16A. 
+The power comes from the  Collimated Beam Projector (CBP) Electronics Cabinet due to a limited amount of power outlets available through the contractor. 
 The function of the electronics cabinet is to power and control the central projector electronics (Linear stages, LEDs, etc.) within the projector, and power and control the meters used to monitor the light coming from the projector.
 
 The electronics cabinet must be powered down via a disconnect switch on the door to open the cabinet. 
@@ -111,23 +88,35 @@ Power will be shut down to all the electronics in the cabinet and the central pr
 The Electronics Cabinet includes a PDU, an Electrometer, two Fiber Spectrographs, a Network Switch, an Ethernet to Serial Server, an Embedded SBC, a LabJack, a 4-axis Drive Controller for the Projector stages, ten Solid State Relays, and ten LED Drivers. 
 There are 5V, 12V, 15V, 24V, and 48V AC to DC power supplies that are all powered through the PDU.
 
-.. figure:: /_static/Projector Panel 7.jpg
- :name: Projector Panel 7
- :target: ../_images/Projector Panel 7.jpg
- :alt: Projector Panel 7
- :scale: 50 %
+.. note::
 
-Component Description
-=====================
+  Since the Central Projector and electronics will receive power from the CBP electronics cabinet, when the CBP electronics cabinet is down or under maintenance the power to the Central Projector will also be off. 
+
+The maximum power, when all the components are operating at full capacity simultaneously, for the entire central projection system was calculated as approximately 730W. 
+The standby power, when the system not in use, but still powered, was calculated as approximately 180W.
+
+.. figure:: /_static/Projector Panel 7.jpg
+   :name: Projector Panel 7
+   :target: ../_images/Projector Panel 7.jpg
+   :alt: Projector Panel 7
+   :width: 75%
+
+   Picture of the inside of the electronics cabinet panel
+
+Component Descriptions
+----------------------
 
 Fiber Spectrographs
--------------------
-The fiber spectrographs used are an  `Avantes SenseLine AvaSpecULS2048x64TEC <https://www.einstinc.com/wpcproduct/avantes-senseline-avaspec-uls2048x64tec-fiber-optic-spectrometers/>`__, with a wavelength range of 200-1160 nm. An optical fiber runs from each of the two fiber spectrographs and monitors the light from the spectral output of the light sources, one monitors red light and the other monitors blue light.
+^^^^^^^^^^^^^^^^^^^
+The fiber spectrographs used are an  `Avantes SenseLine AvaSpecULS2048x64TEC <https://www.einstinc.com/wpcproduct/avantes-senseline-avaspec-uls2048x64tec-fiber-optic-spectrometers/>`__, with a wavelength range of 200-1160 nm. 
+An optical fiber runs from each of the two fiber spectrographs and monitors the light from the spectral output of the light sources, one monitors red light and the other monitors blue light.
 
-The fiber spectrographs are controlled via USB that runs directly from the fiber spectrograph to an embedded SBC in the electronics cabinet. It can be commanded by the ts_fiberspectrograph CSC. More information can be found at https://ts-fiberspectrograph.lsst.io.
+The fiber spectrographs are controlled via USB that runs directly from the fiber spectrograph to an embedded SBC in the electronics cabinet. 
+It can be commanded by the ts_fiberspectrograph CSC. 
+More information can be found at https://ts-fiberspectrograph.lsst.io.
 
 Electrometer 
-------------
+^^^^^^^^^^^^
 The electrometer used is the `Keithley 6517B <https://www.testequipmentdepot.com/media/akeneo_connector/asset_files/6/5/6517b_datasheet_5012.pdf>`__. It monitors the relative brightness of the light sources in the projector.  
 
 The electrometer is controlled via a Serial Device Server, the MOXA Nport 5100. 
@@ -138,7 +127,7 @@ The electrometer sits in the electronics box and the cable from the photodiode i
 Information on the electrometer and photodiode can be found on Docushare `here <https://docushare.lsst.org/docushare/dsweb/View/Collection-5176>`__
 
 Ethernet Network Switch
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 Cisco Catalyst `IE-3100-8T2S-E <https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html>`__. 8-Port Ethernet. The Network Switch is powered at all times except when the disconnect switch on the door of the electronics cabinet is ‘OFF’ or power is otherwise lost to the electronics cabinet. Supplies Ethernet ports for the Ethernet-to-Serial server, PDU, SBCs and LabJack. 
 
 .. note::
@@ -146,19 +135,19 @@ Cisco Catalyst `IE-3100-8T2S-E <https://www.cisco.com/c/en/us/products/collatera
   The Network Switch does not have enough power for POE. 
 
 Ethernet-to-Serial Server
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 `Moxa 5450I-T <https://cdn-cms.azureedge.net/getmedia/1bee66c9-d622-4f16-8024-f22a271a2bdf/moxa-nport-5400-series-datasheet-v2.1.pdf>`__, 4 port Eth to Serial server. Port 1 is RS232 for communications with the Zaber electronics and port 2 is RS485 communications to the Electrometer. Ports 3 and 4 are reserved for future expansion. Information on the Moxa setup can be found `here <https://ts-electrometer.lsst.io/developer-guide/developer-guide.html#moxa-serial-to-ethernet-converter>`__.
 
 Embedded SBC
-------------
+^^^^^^^^^^^^
 The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.They are to be connected to the Ethernet via the Network switch. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
 
 Power Distribution Unit (PDU)
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Power distribution unit is the `Raritan PX3-5288R <https://cdn.raritan.com/product-selector/pdus/PX3-5288R/PX3-5288R-spec.pdf>`__. Port 2 is used for the Electrometer. Ports 3 and 4 are used for Fiber Spectrographs. Port 5 is for powering the Moxa, LED Drivers and LabJack. Port 6 is for powering the projector controller and stages. Only the Network Switch and the Embedded SBC are NOT powered through this device. 
 
 LED Drivers
------------
+^^^^^^^^^^^
 The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__ T-Cube LED Drivers. 
 These are used to drive power to the LEDs in the projector.
 The LED Drivers typically will function at max power to operate the LEDs in the projector. 
@@ -170,25 +159,27 @@ Each LED Driver will be funcitoning in modualtion mode, which allows for the LED
 The LabJack is used to send a signal, via a BNC cable, to no more than two LED Drivers at a time (at most two LEDs will be on at a time in the projector). 
 
 Arc Lamp
---------
+^^^^^^^^
 The spectral Calibration source (arc lamp) is an `AVALight-Cal-Mini <https://www.avantes.com/content/uploads/2020/11/DS-LS-AvaLight-CAL-200702.pdf>`__. Attached to the Arc lamp is a DB15 board to connect the I/O pins to the LabJack, which turn on and off the arc lamp. 
 
 LabJack
--------
+^^^^^^^
 This `LabJack T4 <https://files.labjack.com/datasheets/LabJack-T-Series-Datasheet.pdf>`__ is used to send signals to the SSRs to switch on and off the LEDs, and sends a signal to the Spectral Arc Lamp to switch it on and off. Connected to the LabJack is a DB15 Board, which allows for extra pins for the ten SSRs to connect to the LabJack. 
 
 4-axis Universal Controller
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is a controller is an `X-MCC4 <https://www.zaber.com/products/controllers-joysticks/X-MCC/specs?part=X-MCC4>`__ Zaber controller. This controls the Zaber electronics stages in the projector. The stages are daisy chained together and are all powered through the X-MCC4. Zaber electronics include a Laser Goniometer, Optical Component Stage, LED Linear Stage, Laser Focus Stage, and a Vertical Stage.
 
 Operation
-=========
+---------
+
 
 .. table:: The PDU outlet numbering
+   :class: styled-table
 
    +--------+------------------------------+
    | Outlet | Name                         |
-   +--------+------------------------------+
+   +========+==============================+
    | 9      | Electrometer                 |
    +--------+------------------------------+
    | 10     | Moxa/LabJack/LED Drivers/    |
@@ -199,12 +190,12 @@ Operation
    | 12     | Red Spectrograph             |
    +--------+------------------------------+    
      
-   
 .. table:: IP Addresses
+   :class: styled-table
 
    +---------------------+-------------------+---------------------+-----------------+
    | Component           | MAC address       | DHCP name           |Static IP Address| 
-   +---------------------+-------------------+---------------------+-----------------+
+   +=====================+===================+=====================+=================+
    | PDU                 | 00:0d:5d:2f:d8:09 | pdu1-mainflat-as01  | 139.229.168.153 |
    +---------------------+-------------------+---------------------+-----------------+
    | Moxa                | 00:90:e8:ba:d4:9b | flatfield-stages    | 139.229.168.154 |
@@ -223,7 +214,7 @@ Operation
 
 
 Additional Documentation
-========================
+------------------------
 
 Initial documentation for the Central Projector system was done in `Confluence <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Central+Projection+System+Electronics>`__, and further details on the design and specifications can be found `here <https://rubinobs.atlassian.net/wiki/spaces/LTS/pages/50084494/Central+Projection+System+Electronics>`__. 
 
