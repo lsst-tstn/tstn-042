@@ -5,17 +5,17 @@ Abstract
 --------
 
 Description of the electronics cabinet that will be mounted on the dome to power and communicate with the flatfield projector. 
-The Flat Field Central Projector is a part of the calibration system for the Rubin Telescope. 
-This tech note describes the Flat Field Central Projector electronics system, requirements, and design. 
+The Flatfield Projector is a part of the calibration system for the Rubin Telescope. 
+This tech note describes the Flatfield  Projector electronics system, requirements, and design. 
 All supporting documentation is included. 
 The electronics system was partially designed by Parker Fagrelius and the design was completed and built by Antanasia Jones in December 2023. 
 
 Overview
 --------
 
-In the center of the calibration screen, the `Flatfield Projector <https://tstn-060.lsst.io>`__ was installed that includes the optics to project both white light (LEDs) and the laser to the `Calibration Reflector <https://tstn-049.lsst.io/>`__ and then the `Calibration Screen <https://tstn-057.lsst.io/>`__. 
-Since the Central Projector is placed in the center of the calibration screen, there is a very stringent volume restriction on the projector box with a maximum volume of 500mmX500mmX800mm. 
-Since many electronics are needed to power and operate the projector, a separate electronics cabinet for the projector is being utilized and is installed underneath the projector box on the back of the calibration screen. 
+In the center of the calibration screen, the `Flatfield Projector <https://tstn-060.lsst.io>`__ was installed that includes the optics to project both whitelight (LEDs) and the monochromatic (laser) to the `Calibration Reflector <https://tstn-049.lsst.io/>`__ and then the `Calibration Screen <https://tstn-057.lsst.io/>`__. 
+Since the Flatfield Projector is placed in the center of the calibration screen, there is a very stringent volume restriction on the projector box with a maximum volume of 500mmX500mmX800mm. 
+Since many electronics are needed to power and operate the projector, a separate electronics cabinet for the projector is being utilized and is installed beneat the projector box on the back of the calibration screen. 
 
 Initially, the electronics cabinet was going to sit directly below the projector to reduce all cable lengths. 
 Due to access issues, this was not possible. The electronics cabinet is mounted about 3 meters below the projector.
@@ -34,13 +34,6 @@ Due to access issues, this was not possible. The electronics cabinet is mounted 
     
    The view of the projector and the electronics cabinet from behind the calibration screen
 
-.. figure:: /_static/screen_back2.jpg
-   :name: Back of Screen 2
-   :target: ../_images/screen_back2.jpg
-   :width: 75%
-
-   View of the electronics cabinet from below the calibration screen. Above it you can see a gray frame platform and the black projector box.
-
 Design
 ------
 
@@ -50,6 +43,11 @@ Design
    :alt: Projector Block Diagram
 
    Block Diagram of the Projector electronics cabinet.
+
+All design documents for the electronics cabinet can be found in `Docushare <https://docushare.lsst.org/docushare/dsweb/View/Collection-15975>`__.
+
+Initial documentation on the design and specifications can be found on `Confluence <https://rubinobs.atlassian.net/wiki/spaces/LTS/pages/50084494/Central+Projection+System+Electronics>`__. 
+
 
 Projector Enclosure
 ^^^^^^^^^^^^^^^^^^^
@@ -115,6 +113,13 @@ The fiber spectrographs are controlled via USB that runs directly from the fiber
 It can be commanded by the ts_fiberspectrograph CSC. 
 More information can be found at https://ts-fiberspectrograph.lsst.io.
 
+Embedded SBC
+^^^^^^^^^^^^
+The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.
+Fiber Spectrographs are connected to the SBCs via a USB cable.
+Due to the USB connections, we have to run the CSC directly on the SBC. Therefore, when we used DDS before Kafka, two network connections to each SBC was required due to the unique comm protocol.
+Those two ethernet connections are still in place, but one can be replaced now that we are consistently running with Kafka. 
+
 Electrometer 
 ^^^^^^^^^^^^
 The electrometer used is the `Keithley 6517B <https://www.testequipmentdepot.com/media/akeneo_connector/asset_files/6/5/6517b_datasheet_5012.pdf>`__. It monitors the relative brightness of the light sources in the projector.  
@@ -126,26 +131,34 @@ The electrometer can be run in charge or current mode. The Electrometer is comma
 The electrometer sits in the electronics box and the cable from the photodiode is routed to the Projector enclosure.
 Information on the electrometer and photodiode can be found on Docushare `here <https://docushare.lsst.org/docushare/dsweb/View/Collection-5176>`__
 
-Ethernet Network Switch
-^^^^^^^^^^^^^^^^^^^^^^^
-Cisco Catalyst `IE-3100-8T2S-E <https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html>`__. 8-Port Ethernet. The Network Switch is powered at all times except when the disconnect switch on the door of the electronics cabinet is ‘OFF’ or power is otherwise lost to the electronics cabinet. Supplies Ethernet ports for the Ethernet-to-Serial server, PDU, SBCs and LabJack. 
-
-.. note::
-
-  The Network Switch does not have enough power for POE. 
-
 Ethernet-to-Serial Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 `Moxa 5450I-T <https://cdn-cms.azureedge.net/getmedia/1bee66c9-d622-4f16-8024-f22a271a2bdf/moxa-nport-5400-series-datasheet-v2.1.pdf>`__, 4 port Eth to Serial server. Port 1 is RS232 for communications with the Zaber electronics and port 2 is RS485 communications to the Electrometer. Ports 3 and 4 are reserved for future expansion. Information on the Moxa setup can be found `here <https://ts-electrometer.lsst.io/developer-guide/developer-guide.html#moxa-serial-to-ethernet-converter>`__.
 
-Embedded SBC
-^^^^^^^^^^^^
-The embedded SBCs are `ADL1500 Embedded Solutions <https://www.adl-usa.com/wp-content/uploads/2017/01/ADLEPC-1500-Datasheet-Final.pdf>`__.They are to be connected to the Ethernet via the Network switch. The SBC is used to communicate with and control the fiber Spectrographs via USB connections. 
-
 Power Distribution Unit (PDU)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Power distribution unit is the `Raritan PX3-5288R <https://cdn.raritan.com/product-selector/pdus/PX3-5288R/PX3-5288R-spec.pdf>`__. Port 2 is used for the Electrometer. Ports 3 and 4 are used for Fiber Spectrographs. Port 5 is for powering the Moxa, LED Drivers and LabJack. Port 6 is for powering the projector controller and stages. Only the Network Switch and the Embedded SBC are NOT powered through this device. 
+Power distribution unit is the `Raritan PX3-5288R <https://cdn.raritan.com/product-selector/pdus/PX3-5288R/PX3-5288R-spec.pdf>`__. 
+It can be accessed at pdu1-mainflat-as01.cp.lsst.org (139.229.168.153).
 
+The Network Switch and the Embedded SBCs are NOT powered through the PDU.
+
+.. table:: The PDU outlet numbering
+   :class: styled-table
+
+   +--------+------------------------------+
+   | Outlet | Name                         |
+   +========+==============================+
+   | 8      | Blue Spectrograph            |
+   +--------+------------------------------+   
+   | 9      | Red Spectrograph             |
+   +--------+------------------------------+ 
+   | 10     | Electrometer                 |
+   +--------+------------------------------+
+   | 11     | Moxa/LabJack/LED Drivers/    |
+   |        | Projector Controller & Stages|
+   +--------+------------------------------+ 
+   
+ 
 LED Drivers
 ^^^^^^^^^^^
 The LED drivers are the `Thorlab LEDD1B <https://www.thorlabs.com/newgrouppage9.cfm?objectgroup_id=2616&pn=LEDD1B>`__ T-Cube LED Drivers. 
@@ -155,7 +168,7 @@ The LED Drivers typically will function at max power to operate the LEDs in the 
 There are ten LED Drivers, each connected to a solid-state relay (SSR).
 Each SSR is connected to the LabJack, which is programmed to send a signal to the SSR that corresponds with the LED Driver(s)/LED(s) that are to be turned on. 
 
-Each LED Driver will be funcitoning in modualtion mode, which allows for the LEDs that are selected to be adjusted in brightness. 
+Each LED Driver will be funcitoning in modulation mode, which allows for the LEDs that are selected to be adjusted in brightness. 
 The LabJack is used to send a signal, via a BNC cable, to no more than two LED Drivers at a time (at most two LEDs will be on at a time in the projector). 
 
 Arc Lamp
@@ -168,28 +181,28 @@ This `LabJack T4 <https://files.labjack.com/datasheets/LabJack-T-Series-Datashee
 
 4-axis Universal Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is a controller is an `X-MCC4 <https://www.zaber.com/products/controllers-joysticks/X-MCC/specs?part=X-MCC4>`__ Zaber controller. This controls the Zaber electronics stages in the projector. The stages are daisy chained together and are all powered through the X-MCC4. Zaber electronics include a Laser Goniometer, Optical Component Stage, LED Linear Stage, Laser Focus Stage, and a Vertical Stage.
+The Zaber linear stages are controlled via `X-MCC4 <https://www.zaber.com/products/controllers-joysticks/X-MCC/specs?part=X-MCC4>`__. 
+The OMG-T4A (with two connections) and the LED Linear Stage connect directly to the X-MCC4 with MC10 cables. The remainder are connected via RS-232 and daisy chained together.
+Zaber electronics include a Laser Goniometer, Optical Component Stage, LED Linear Stage, Laser Focus Stage, and a Vertical Stage.
 
-Operation
----------
+Ethernet Network Switch
+^^^^^^^^^^^^^^^^^^^^^^^
+The installed switch is the Cisco Catalyst `IE-3100-8T2S-E <https://www.cisco.com/c/en/us/products/collateral/networking/industrial-switches/catalyst-ie3100-rugged-series/catalyst-ie3100-rugged-series-ds.html>`__ 8-Port Ethernet. 
+The Network Switch is powered at all times except when the disconnect switch on the door of the electronics cabinet is ‘OFF’ or power is otherwise lost to the electronics cabinet. 
+A fiber optic is routed directly from the dome switch to this switch. 
 
+.. figure:: /_static/mainflat.png
+   :name: mainflat switch
+   :target: ../_images/mainflat.png
+   :alt: mainflat switch
+   :width: 75%
 
-.. table:: The PDU outlet numbering
-   :class: styled-table
+   Setup of the Cisco Network Switch
 
-   +--------+------------------------------+
-   | Outlet | Name                         |
-   +========+==============================+
-   | 9      | Electrometer                 |
-   +--------+------------------------------+
-   | 10     | Moxa/LabJack/LED Drivers/    |
-   |        | Projector Controller & Stages|
-   +--------+------------------------------+ 
-   | 11     | Blue Spectrograph            |
-   +--------+------------------------------+   
-   | 12     | Red Spectrograph             |
-   +--------+------------------------------+    
-     
+.. note::
+
+  The Network Switch does not have enough power for POE. 
+
 .. table:: IP Addresses
    :class: styled-table
 
@@ -211,15 +224,3 @@ Operation
    | Electrometer        | 80:09:02:0F:CB:E1 | flat-electrometer   | 139.229.168.158 |
    +---------------------+-------------------+---------------------+-----------------+
 
-
-
-Additional Documentation
-------------------------
-
-Initial documentation for the Central Projector system was done in `Confluence <https://confluence.lsstcorp.org/pages/viewpage.action?spaceKey=LTS&title=Central+Projection+System+Electronics>`__, and further details on the design and specifications can be found `here <https://rubinobs.atlassian.net/wiki/spaces/LTS/pages/50084494/Central+Projection+System+Electronics>`__. 
-
-Docushare: https://docushare.lsst.org/docushare/dsweb/View/Collection-10012 
-
-Docushare for Projector Enclosure: https://docushare.lsst.org/docushare/dsweb/View/Collection-15446
-
-Docushare for Electronics Cabinet: https://docushare.lsst.org/docushare/dsweb/View/Collection-15975
